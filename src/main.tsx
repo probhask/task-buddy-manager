@@ -11,10 +11,7 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Suspense fallback={<Loading />}>
       <ErrorBoundary>
-        <RouterProvider
-          router={appPagesRoutes}
-          future={{ v7_startTransition: true }}
-        />
+        <RouterProvider router={appPagesRoutes} />
       </ErrorBoundary>
     </Suspense>
   </StrictMode>
