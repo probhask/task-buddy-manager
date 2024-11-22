@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+    /* Primary Colors */
+    --color-primary: #4CAF50;
+    --color-secondary: #FFC107;
+    --color-danger: #F44336;
+  
+    /* Neutral Colors */
+    --color-bg: #F5F5F5;
+    --color-task-list:#E0E0E0;
+    --color-text-primary: #212121;
+    --color-text-secondary: #757575;
+    --color-divider: #B0B0B0;
+    
+    /* card color to choose */
+    --color-card-bg: #FFFFFF;
+    --color-card-red:#FF5733;
+    --color-card-orange:#FFA500;
+    --color-card-yellow:#FFD700;
+    --color-card-pink:#FF69B4;
+    --color-card-green:#32CD32;
+
+
+  
+    /* Priority Colors */
+    --color-priority-high: #FF5722;
+    --color-priority-medium: #FFC107;
+    --color-priority-low: #4CAF50;
+  
+    /* Completed Tasks */
+    --color-completed: #9E9E9E;
+  
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32root 
+
+
+  /* Fonts */
+  --font-family: 'Roboto', sans-serif;
+  --font-size-sm: 12px;
+  --font-size-md: 16px;
+  --font-size-lg: 20px;
+
+  /* Border Radius */
+  --border-radius: 8px;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+     /* Primary Colors */
+     --color-primary: #81C784;
+     --color-secondary: #FFD54F;
+     --color-danger: #E57373;
+   
+     /* Neutral Colors */
+     --color-bg: #121212;
+    --color-task-list:#1A1A1A;
+
+     --color-text-primary: #FFFFFF;
+     --color-text-secondary: #B0BEC5;
+     --color-divider: #424242;
+     
+     /* Priority Colors */
+     --color-priority-high: #FF7043;
+     --color-priority-medium: #FFD54F;
+     --color-priority-low: #81C784;
+     
+     /* card color to choose */
+     --color-card-bg: #1E1E1E;
+    --color-card-red:#800000;
+    --color-card-orange:#FF8C00;
+    --color-card-yellow:#B8860B;
+    --color-card-pink:#8B008B;
+    --color-card-green:#228B22;
+  
+    /* Completed Tasks */
+    --color-completed: #757575;
+  
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+  
+    /* Fonts */
+    --font-family: 'Roboto', sans-serif;
+    --font-size-sm: 12px;
+    --font-size-md: 16px;
+    --font-size-lg: 20px;
+  
+    /* Border Radius */
+    --border-radius: 8px;
+  }
+} 
+
+body.dark-mode {
+    /* Primary Colors */
+    --color-primary: #81C784;
+    --color-secondary: #FFD54F;
+    --color-danger: #E57373;
+  
+    /* Neutral Colors */
+    --color-bg: #121212;
+    --color-task-list:#1A1A1A;
+
+    --color-text-primary: #FFFFFF;
+    --color-text-secondary: #B0BEC5;
+    --color-divider: #424242;
+  
+   /* Priority Colors */
+   --color-priority-high: #FF7043;
+   --color-priority-medium: #FFD54F;
+   --color-priority-low: #81C784;
+
+      /* card color to choose */
+      --color-card-bg: #1E1E1E;
+      --color-card-red:#800000;
+      --color-card-orange:#FF8C00;
+      --color-card-yellow:#B8860B;
+      --color-card-pink:#8B008B;
+      --color-card-green:#228B22;
+ 
+   /* Completed Tasks */
+   --color-completed: #757575;
+ 
+   /* Spacing */
+   --spacing-xs: 4px;
+   --spacing-sm: 8px;
+   --spacing-md: 16px;
+   --spacing-lg: 24px;
+   --spacing-xl: 32px;
+ 
+   /* Fonts */
+   --font-family: 'Roboto', sans-serif;
+   --font-size-sm: 12px;
+   --font-size-md: 16px;
+   --font-size-lg: 20px;
+ 
+   /* Border Radius */
+   --border-radius: 8px;
+ } 
+
+ body{
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+ }
+
+
+.no-scrollbar::-webkit-scrollbar{
+  display: none;
+  -webkit-appearance: none;
+}
