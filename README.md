@@ -1,6 +1,8 @@
-# Task Buddy
+# Task Buddy Manger
 
-*Task Buddy* is a simple, user-friendly task management app designed to help you organize, prioritize, and track your tasks efficiently. Whether you’re managing personal to-do lists or collaborative projects, Task Buddy ensures everything is under control.
+*Task Buddy Manager* is a simple, user-friendly task management app designed to help you organize, prioritize, and track your tasks efficiently. Whether you’re managing personal to-do lists or collaborative projects, Task Buddy ensures everything is under control.
+
+![Website Screenshot](./src/assets/screenshot.png)
 
 ---
 
@@ -13,6 +15,14 @@
 - *Real-Time Updates*: Instant UI updates when tasks are added, edited, or deleted.  
 - *Persistent Storage*: Tasks are stored in the browser's local storage.  
 - *Responsive Design*: Works seamlessly on desktop, tablet, and mobile devices.
+
+---
+
+## Live Deployment
+
+The project is deployed and accessible online. You can check it out using the link below:
+
+[Live Demo](https://task-buddy-manager.netlify.app/)
 
 ---
 
