@@ -43,21 +43,29 @@ Make sure you have the following installed on your system:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/probhask/task-buddy.git
+      git clone https://github.com/probhask/task-buddy.git
+   ```
 
 2. Navigate to the project directory:
 
-cd task-buddy
+    ```bash
+      cd task-buddy
+    ```
+
 
 3. Install dependencies:
 
-npm install
+    ```bash
+    npm install
+    ```
 
 Running the App
 
 Start the development server:
 
-npm start
+  ```bash
+  npm run dev
+  ```
 
 The app will be accessible at <http://localhost:5173>.
 
