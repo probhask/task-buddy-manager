@@ -43,15 +43,14 @@ Make sure you have the following installed on your system:
 1. Clone the repository:
 
    ```bash
-      git clone https://github.com/probhask/task-buddy.git
+      git clone https://github.com/probhask/task-buddy-manager.git
    ```
 
 2. Navigate to the project directory:
 
     ```bash
-      cd task-buddy
+      cd task-buddy-manager
     ```
-
 
 3. Install dependencies:
 
@@ -74,18 +73,13 @@ The app will be accessible at <http://localhost:5173>.
 Usage
 
 1. Adding a Task
-
 Click on "Add Task" to open the modal.
 Fill in the details like title, description, status, priority, and due date.
 Click "Save" to add the task to the list.
-
 2. Editing a Task
-
 Click the "Edit" button on a task.
 Update the desired fields and save the changes.
-
 3. Deleting a Task
-
 Click the "Delete" button on a task to remove it from the list.
 
 ---
