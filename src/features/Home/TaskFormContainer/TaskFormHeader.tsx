@@ -1,5 +1,5 @@
 import { Close } from "@material-ui/icons";
-import { IconButton } from "@mui/material";
+import { IconButton, Tooltip } from "@mui/material";
 import React from "react";
 
 const TaskFormHeader = React.memo(
@@ -15,12 +15,14 @@ const TaskFormHeader = React.memo(
         <h1 className="text-xl font-bold flex-1 text-center">
           {isEditing ? "Edit Task" : "Add New Task"}
         </h1>
-        <IconButton size="small" onClick={closeModal}>
-          <Close
-            fontSize="small"
-            className="text-[var(--color-text-primary)]"
-          />
-        </IconButton>
+        <Tooltip title="close" placement="top">
+          <IconButton size="small" onClick={closeModal}>
+            <Close
+              fontSize="small"
+              className="text-[var(--color-text-primary)]"
+            />
+          </IconButton>
+        </Tooltip>
       </div>
     );
   }

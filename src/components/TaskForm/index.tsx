@@ -49,30 +49,31 @@ const TaskForm = React.memo(() => {
       }
     >
       {({ values, errors, touched, handleSubmit, isSubmitting }) => (
-        <form
-          onSubmit={handleSubmit}
-          className="w-full grid sm:grid-cols-2 gap-x-10 gap-y-10"
-        >
-          {taskFormControls.map((formControl) => (
-            <StyledFormControl key={formControl.name}>
-              <StyledFormLabel htmlFor={formControl.name}>
-                {formControl.label}
-              </StyledFormLabel>
-              <CommonFormElement currentItem={formControl} />
-              {touched[formControl.name as keyof TASK_FORM] &&
-                errors[formControl.name as keyof TASK_FORM] && (
-                  <ErrorText variant="body2">
-                    {errors[formControl.name as keyof TASK_FORM]}
-                  </ErrorText>
-                )}
-            </StyledFormControl>
-          ))}
+        <form onSubmit={handleSubmit} className="w-full ">
+          <div className="w-full grid sm:grid-cols-2 gap-x-10 gap-y-10">
+            {taskFormControls.map((formControl) => (
+              <StyledFormControl key={formControl.name}>
+                <StyledFormLabel htmlFor={formControl.name}>
+                  {formControl.label}
+                </StyledFormLabel>
+                <CommonFormElement currentItem={formControl} />
+                {touched[formControl.name as keyof TASK_FORM] &&
+                  errors[formControl.name as keyof TASK_FORM] && (
+                    <ErrorText variant="body2">
+                      {errors[formControl.name as keyof TASK_FORM]}
+                    </ErrorText>
+                  )}
+              </StyledFormControl>
+            ))}
+          </div>
           <Button
+            fullWidth
             disabled={isSubmitting || validateFormSubmitButton(values)}
             variant="contained"
             type="submit"
             sx={{
               backgroundColor: `var(--color-text-primary)`,
+              marginTop: 5,
               color: `var(--color-bg)`,
               ":disabled": {
                 backgroundColor: "#CECECE",

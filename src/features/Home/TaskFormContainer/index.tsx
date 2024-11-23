@@ -23,7 +23,7 @@ const TaskFormContainer = React.memo(() => {
         width: "100%",
       }}
     >
-      <div className="bg-[var(--color-task-list)] text-[var(--color-text-primary)] px-4 py-8 sm:rounded-lg min-h-svh sm:h-auto w-full sm:w-[500px]">
+      <div className="bg-[var(--color-task-list)] text-[var(--color-text-primary)] px-4 py-8 sm:rounded-lg h-svh  sm:h-auto w-full sm:w-[600px]">
         <div className="w-full h-full">
           <TaskFormHeader
             isEditing={Boolean(currentEditedTaskID)}

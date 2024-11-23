@@ -21,7 +21,7 @@ const GroupHeader = React.memo(
           color: `${groupColor}`,
           borderTopColor: `${groupColor}`,
         }}
-        className={`w-full text-[${groupColor}] bg-[var(--color-card-bg)]  border-t-[5px] border-t-[${groupColor}] flex gap-2 items-center  px-2 py-1  mb-2 rounded  shadow`}
+        className={`w-full text-[${groupColor}] bg-[var(--color-card-bg)]  border-t-[5px] border-t-[${groupColor}] flex gap-2 items-center  px-2 py-1  mb-2 rounded  shadow sticky top-0`}
       >
         <h2 className="capitalize">
           {groupStatus === "all" ? "All Tasks" : groupStatus}

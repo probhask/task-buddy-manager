@@ -20,7 +20,7 @@ export const formInitialState: TASK_FORM = {
 };
 export const filterFormInitialState: FILTER_FORM = {
   status: "all",
-  priority: [],
+  priority: ["low", "medium", "high"],
   endDate: "default",
 };
 export const formInitialValues = (taskFormData: TASK_FORM) => {
@@ -165,19 +165,58 @@ export const taskFormControls: FORM_CONTROLS[] = [
     ],
   },
 
+  // {
+  //   label: "Color",
+  //   name: "color",
+  //   placeholder: "Choose color",
+  //   type: "select",
+  //   componentType: "select",
+  //   items: [
+  //     { name: "default", value: "var(--color-card-bg)" },
+  //     { name: "red", value: "var(--color-card-red)" },
+  //     { name: "orange", value: "var(--color-card-orange)" },
+  //     { name: "yellow", value: "var(--color-card-yellow)" },
+  //     { name: "pink", value: "var(--color-card-pink)" },
+  //     { name: "green", value: "var(--color-card-green)" },
+  //   ],
+  // },
   {
     label: "Color",
     name: "color",
     placeholder: "Choose color",
-    type: "select",
-    componentType: "select",
-    items: [
-      { name: "default", value: "var(--color-card-bg)" },
-      { name: "red", value: "var(--color-card-red)" },
-      { name: "orange", value: "var(--color-card-orange)" },
-      { name: "yellow", value: "var(--color-card-yellow)" },
-      { name: "pink", value: "var(--color-card-pink)" },
-      { name: "green", value: "var(--color-card-green)" },
+    type: "radio",
+    componentType: "radio",
+    options: [
+      {
+        name: "",
+        value: "var(--color-card-bg)",
+        color: "var(--color-card-bg)",
+      },
+      {
+        name: "",
+        value: "var(--color-card-red)",
+        color: "var(--color-card-red)",
+      },
+      {
+        name: "",
+        value: "var(--color-card-orange)",
+        color: "var(--color-card-orange)",
+      },
+      {
+        name: "",
+        value: "var(--color-card-yellow)",
+        color: "var(--color-card-yellow)",
+      },
+      {
+        name: "",
+        value: "var(--color-card-pink)",
+        color: "var(--color-card-pink)",
+      },
+      {
+        name: "",
+        value: "var(--color-card-green)",
+        color: "var(--color-card-green)",
+      },
     ],
   },
   {

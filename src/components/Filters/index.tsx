@@ -1,4 +1,4 @@
-import { IconButton, Menu } from "@mui/material";
+import { IconButton, Menu, Tooltip } from "@mui/material";
 import React, { useState } from "react";
 
 import FilterForm from "../FilterForm";
@@ -13,15 +13,17 @@ const Filters = React.memo(() => {
     setAnchorEl(null);
   };
   return (
-    <div className="sm:hidden">
-      <IconButton
-        onClick={handleOpenMenu}
-        sx={{
-          display: { sx: "block", sm: "none" },
-        }}
-      >
-        <FilterList className="text-[var(--color-text-primary)]" />
-      </IconButton>
+    <div className="sm:hidden  -order-1">
+      <Tooltip title="Filters" placement="top">
+        <IconButton
+          onClick={handleOpenMenu}
+          sx={{
+            display: { sx: "block", sm: "none" },
+          }}
+        >
+          <FilterList className="text-[var(--color-text-primary)]" />
+        </IconButton>
+      </Tooltip>
 
       <Menu
         open={Boolean(anchorEl)}

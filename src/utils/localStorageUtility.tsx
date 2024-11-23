@@ -1,4 +1,4 @@
-type LOCAL_STORAGE_KEY = "task-buddy" | "task-filter";
+type LOCAL_STORAGE_KEY = "task-buddy" | "task-filter" | "dark-mode";
 
 export function storeToLocalStorage<T>(key: LOCAL_STORAGE_KEY, data: T) {
   localStorage.setItem(key, JSON.stringify(data));

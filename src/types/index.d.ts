@@ -42,6 +42,8 @@ export type TaskManagerContextProps = {
   isOpenModal: boolean;
   openModal: () => void;
   closeModal: () => void;
+  isDarkMode: boolean;
+  toggleDarkMode: () => void;
   currentEditedTaskID: string | null;
   updateCurrentEditedTaskID: (value: string | null) => void;
   taskFormData: TASK_FORM;
@@ -56,9 +58,6 @@ export type TaskManagerContextProps = {
   addNewTask: (data: TASK_FORM) => void;
   editTask: (data: TASK_FORM, taskID: string) => void;
   deleteTask: (taskID: string) => void;
-  taskcategoricalList: {
-    pending: TASK[];
-    completed: TASK[];
-    overdue: TASK[];
-  };
+  completeTask: (taskID: string) => void;
+  inCompleteTask: (taskID: string) => void;
 };

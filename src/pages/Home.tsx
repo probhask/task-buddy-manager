@@ -1,4 +1,4 @@
-import { Fab, styled } from "@mui/material";
+import { Fab, styled, Tooltip } from "@mui/material";
 
 import { Add } from "@material-ui/icons";
 import FilterForm from "@/components/FilterForm";
@@ -10,17 +10,19 @@ const Home = () => {
     useTaskManagerContext();
 
   return (
-    <div className="w-full flex justify-center gap-x-4 gap-y-20 p-2 h-full container mx-auto">
+    <div className="w-full flex justify-between gap-x-4 gap-y-20 p-2 h-full container mx-auto ">
       <TaskGroup
         groupStatus={filterFormData?.status}
         taskList={filteredTaskList}
       />
-      <div className="hidden sm:block">
+      <div className="hidden sm:block relative">
         <FilterForm />
       </div>
-      <StyledAddMoreTaskFab onClick={openModal}>
-        <Add />
-      </StyledAddMoreTaskFab>
+      <Tooltip title="Add New Task" placement="top">
+        <StyledAddMoreTaskFab onClick={openModal}>
+          <Add />
+        </StyledAddMoreTaskFab>
+      </Tooltip>
     </div>
   );
 };

@@ -10,11 +10,10 @@ import {
   createContext,
   useCallback,
   useEffect,
-  useMemo,
   useRef,
   useState,
 } from "react";
-import { checkIfOverDue, getCategoricalTaskList } from "@/utils/taskUtility";
+import { checkIfOverDue } from "@/utils/taskUtility";
 import { filterFormInitialState, formInitialState } from "@/utils/formUtility";
 import {
   storeToLocalStorage,
@@ -56,6 +55,24 @@ export const TaskManagerContextProvider = ({
     storedLocalStorageData<TASK[]>("task-buddy") || []
   );
   const [filteredTaskList, setFilteredTaskList] = useState<TASK[]>([]);
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(
+    storedLocalStorageData<boolean>("dark-mode") || false
+  );
+
+  const toggleDarkMode = useCallback(() => {
+    setIsDarkMode((prev) => {
+      return !prev;
+    });
+  }, [isDarkMode]);
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.body.classList.add("dark-mode");
+    } else {
+      document.body.classList.remove("dark-mode");
+    }
+    storeToLocalStorage<boolean>("dark-mode", isDarkMode);
+  }, [isDarkMode]);
   const updateTaskList = (data: TASK[]): void => {
     setTaskList([...data]);
     storeToLocalStorage("task-buddy", data);
@@ -74,7 +91,6 @@ export const TaskManagerContextProvider = ({
   }, []);
 
   const updateFilterData = (data: FILTER_FORM) => {
-    console.log(data);
     setFilterFormData(data);
     storeToLocalStorage<FILTER_FORM>("task-filter", data);
   };
@@ -106,6 +122,38 @@ export const TaskManagerContextProvider = ({
     },
     [taskList]
   );
+  // complete task
+  const completeTask = useCallback(
+    (taskID: string) => {
+      const updatedData = taskList.map((task) =>
+        task.id === taskID
+          ? {
+              ...task,
+              status: "completed" as STATUS,
+            }
+          : task
+      );
+      updateTaskList([...updatedData]);
+    },
+    [taskList]
+  );
+  // complete task
+  const inCompleteTask = useCallback(
+    (taskID: string) => {
+      const updatedData = taskList.map((task) =>
+        task.id === taskID
+          ? {
+              ...task,
+              status: checkIfOverDue(task.endDate)
+                ? "overdue"
+                : ("pending" as STATUS),
+            }
+          : task
+      );
+      updateTaskList([...updatedData]);
+    },
+    [taskList]
+  );
   // edit task
   const editTask = useCallback(
     (data: TASK_FORM, taskID: string) => {
@@ -130,10 +178,6 @@ export const TaskManagerContextProvider = ({
       const updatedData = taskList.filter((task) => task.id !== taskID);
       updateTaskList([...updatedData]);
     },
-    [taskList]
-  );
-  const taskcategoricalList: { [key in TASK["status"]]: TASK[] } = useMemo(
-    () => getCategoricalTaskList(taskList),
     [taskList]
   );
 
@@ -186,6 +230,9 @@ export const TaskManagerContextProvider = ({
     isOpenModal,
     openModal,
     closeModal,
+    // darkMode
+    isDarkMode,
+    toggleDarkMode,
     // edit task id
     currentEditedTaskID,
     updateCurrentEditedTaskID,
@@ -202,10 +249,11 @@ export const TaskManagerContextProvider = ({
     // task list
     taskList,
     filteredTaskList,
-    taskcategoricalList,
     addNewTask,
     editTask,
     deleteTask,
+    completeTask,
+    inCompleteTask,
   };
   return (
     <TaskManagerContext.Provider value={contextData}>

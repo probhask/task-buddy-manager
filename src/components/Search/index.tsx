@@ -7,28 +7,27 @@ import useTaskManagerContext from "@/hooks/useTaskManagerContext";
 const Search = React.memo(() => {
   const { searchQuery, updateSearchQuery } = useTaskManagerContext();
   return (
-    <div>
-      <div>
-        <StyledTextField
-          variant="standard"
-          value={searchQuery}
-          onChange={(e) => {
-            updateSearchQuery(e.target.value);
-          }}
-          slotProps={{
-            input: {
-              startAdornment: (
-                <InputAdornment position="start">
-                  <SearchOutlined
-                    fontSize="small"
-                    className="text-[var(--color-text-primary)]"
-                  />
-                </InputAdornment>
-              ),
-            },
-          }}
-        />
-      </div>
+    <div className="flex-1 max-w-[300px]">
+      <StyledTextField
+        variant="standard"
+        value={searchQuery}
+        placeholder="search"
+        onChange={(e) => {
+          updateSearchQuery(e.target.value);
+        }}
+        slotProps={{
+          input: {
+            startAdornment: (
+              <InputAdornment position="start">
+                <SearchOutlined
+                  fontSize="small"
+                  className="text-[var(--color-text-primary)]"
+                />
+              </InputAdornment>
+            ),
+          },
+        }}
+      />
     </div>
   );
 });

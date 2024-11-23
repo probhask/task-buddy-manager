@@ -55,6 +55,9 @@ function CommonFormElement({ currentItem }: { currentItem: FORM_CONTROLS }) {
                     control={
                       <Checkbox
                         sx={{
+                          ":hover": {
+                            backgroundColor: "var(--color-btn-hover)",
+                          },
                           color: option.color || "var(--color-text-primary)",
                           "&.Mui-checked": {
                             color: option.color || "var(--color-text-primary)",
@@ -91,7 +94,7 @@ function CommonFormElement({ currentItem }: { currentItem: FORM_CONTROLS }) {
         return (
           <>
             <RadioGroup
-              {...currentItem}
+              id={currentItem?.name}
               name={currentItem.name}
               value={values[currentItem.name]}
               onChange={handleChange}
@@ -113,6 +116,9 @@ function CommonFormElement({ currentItem }: { currentItem: FORM_CONTROLS }) {
                       <Radio
                         sx={{
                           color: option?.color || "var(--color-text-primary)",
+                          ":hover": {
+                            backgroundColor: "var(--color-btn-hover)",
+                          },
                           "&.Mui-checked": {
                             color: option?.color || "var(--color-text-primary)",
                           },
@@ -130,23 +136,24 @@ function CommonFormElement({ currentItem }: { currentItem: FORM_CONTROLS }) {
         return (
           <>
             <Select
-              {...currentItem}
               name={currentItem.name}
+              id={currentItem.name}
               value={values[currentItem?.name]}
               onChange={handleChange}
               onBlur={handleBlur}
               sx={{
-                backgroundColor: values[currentItem?.name],
-                "&.MuiPaper-root": {
-                  backgroundColor: "red",
-                },
+                backgroundColor: "var(--color-task-list)",
+                color: "var(--color-text-primary)",
+
                 "&.MuiOutlinedInput-root": {
                   color: "var(--color-text-secondary)",
                 },
-                color: "var(--color-text-primary)",
                 "& fieldset": {
                   borderColor: "var(--color-text-primary)",
                   colors: "var(--color-text-primary)",
+                  ":hover": {
+                    borderColor: "var(--color-text-primary)",
+                  },
                 },
                 "&:hover fieldset": {
                   borderColor: "var(--color-text-primary)",
@@ -165,7 +172,7 @@ function CommonFormElement({ currentItem }: { currentItem: FORM_CONTROLS }) {
               {currentItem.items &&
                 currentItem.items.length > 0 &&
                 currentItem.items.map((item) => (
-                  <MenuItem sx={{}} key={item.name} value={item.value}>
+                  <MenuItem key={item.name} value={item.value}>
                     {item.name}
                   </MenuItem>
                 ))}
@@ -173,7 +180,7 @@ function CommonFormElement({ currentItem }: { currentItem: FORM_CONTROLS }) {
           </>
         );
 
-        // default:
+      default:
         return <StyledTextField {...currentItem} name={currentItem.name} />;
     }
   };

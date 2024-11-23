@@ -10,7 +10,7 @@
 
 :root {
     /* Primary Colors */
-    --color-primary: #4CAF50;
+    --color-primary: #335A02;
     --color-secondary: #FFC107;
     --color-danger: #F44336;
   
@@ -20,7 +20,9 @@
     --color-text-primary: #212121;
     --color-text-secondary: #757575;
     --color-divider: #B0B0B0;
-    
+
+    /* button hover */
+    --color-btn-hover:rgba(0,0,0,0.1);
     /* card color to choose */
     --color-card-bg: #FFFFFF;
     --color-card-red:#FF5733;
@@ -59,17 +61,19 @@
 @media (prefers-color-scheme: dark){
   :root{
      /* Primary Colors */
-     --color-primary: #81C784;
+     --color-primary: #335A02;
      --color-secondary: #FFD54F;
      --color-danger: #E57373;
    
      /* Neutral Colors */
      --color-bg: #121212;
     --color-task-list:#1A1A1A;
-
      --color-text-primary: #FFFFFF;
      --color-text-secondary: #B0BEC5;
      --color-divider: #424242;
+
+     /* button hover */
+    --color-btn-hover:rgba(255,255,255,0.1);
      
      /* Priority Colors */
      --color-priority-high: #FF7043;
@@ -107,17 +111,19 @@
 
 body.dark-mode {
     /* Primary Colors */
-    --color-primary: #81C784;
+    --color-primary: #335A02;
     --color-secondary: #FFD54F;
     --color-danger: #E57373;
   
     /* Neutral Colors */
     --color-bg: #121212;
     --color-task-list:#1A1A1A;
-
     --color-text-primary: #FFFFFF;
     --color-text-secondary: #B0BEC5;
     --color-divider: #424242;
+
+    /* button hover */
+    --color-btn-hover:rgba(255,255,255,0.1);
   
    /* Priority Colors */
    --color-priority-high: #FF7043;

@@ -23,7 +23,9 @@ const TaskCard = React.memo(({ task }: { task: TASK }) => {
       sx={{
         flexShrink: 0,
         backgroundColor: `${task?.color}`,
-        border: `2px solid ${task?.color}`,
+        borderRadius: "8px",
+        overflow: "hidden",
+        // border: `2px solid ${task?.color}`,
       }}
     >
       <Fade in={deletedTaskID !== task.id} timeout={500}>
@@ -37,7 +39,11 @@ const TaskCard = React.memo(({ task }: { task: TASK }) => {
           }}
           className={`w-full shadow-lg px-2 py-4  transition-all`}
         >
-          <TaskCardHeader task={task} handleDeleteTask={handleDeleteTask} />
+          <TaskCardHeader
+            task={task}
+            status={task.status}
+            handleDeleteTask={handleDeleteTask}
+          />
           <TaskInfo
             title={task.title}
             description={task.description}

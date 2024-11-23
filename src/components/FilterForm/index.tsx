@@ -24,9 +24,10 @@ type FilterFormProps = {
 const FilterForm = React.memo(({ closeMenu }: FilterFormProps) => {
   const { filterFormData, updateFilterData } = useTaskManagerContext();
   return (
-    <div className="sm:border sm:rounded-md sm:shadow-md sm:h-fit sm:py-5 sm:px-2">
+    <div className="sm:border sm:rounded-md sm:shadow-md sm:h-fit sm:py-5 sm:px-2 sm:shrink-0 sm:sticky sm:top-28 bg-[var(--color-task-list)] border-[var(--color-task-list)]">
       <Formik
         initialValues={getFilterFormInitialValues(filterFormData)}
+        enableReinitialize={true}
         validationSchema={filterFormValidationSchema}
         onSubmit={(values, formikHelpers) =>
           handleFilterFormSubmit(
@@ -45,6 +46,15 @@ const FilterForm = React.memo(({ closeMenu }: FilterFormProps) => {
                 sx={{
                   "&.MuiMenuItem-root:hover ": {
                     backgroundColor: "inherit",
+                  },
+                  ":hover": {
+                    backgroundColor: "none",
+                  },
+                  ":active": {
+                    backgroundColor: "none",
+                  },
+                  ":focus": {
+                    backgroundColor: "none",
                   },
                 }}
               >
